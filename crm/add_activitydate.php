@@ -254,6 +254,9 @@ elseif ($adminposition == 3) {
          var form = $('#submitForm')[0];
         var formData = new FormData(form);
         event.preventDefault();
+
+        // console.log(formData);
+        
         // $("#sub-btn").attr("disabled", true);
             $.ajax({
             type: 'POST',
@@ -263,6 +266,8 @@ elseif ($adminposition == 3) {
             dataType: "json",
             data: formData,
             success: function (data) {
+              console.log(data);
+              
               if(data=='done'){
                 swal({
                   title: 'Added Successfully!',
@@ -276,9 +281,19 @@ elseif ($adminposition == 3) {
                      location.reload();
                      }) 
                
+               } else if(data == "inactive done"){
+                   swal({
+                  title: 'updated Successfully!',
+                        text: "Date & Slot has been successfully Inactived",
+                        icon: 'success',
+                        confirmButtonColor: '#3f51b5',
+                        closeOnEsc: false,
+                        closeOnClickOutside: false,
+                        
+                      }).then(function(t) {
+                     location.reload();
+                     }) 
                }
-             
-   
             },
             error: function (data) {
                swal({

@@ -290,6 +290,8 @@ elseif ($adminposition == 3) {
             data: { "slot_id": slot_id, "type": type , "date_id": date_id },
             dataType: "json",
             success: function(data) {
+              console.log(data);
+              
                 if (data === 'done') {
                     swal({
                         title: "Active!",

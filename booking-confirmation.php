@@ -320,6 +320,15 @@ else
                                        </select>
                                     </div>
                                  </div>
+                                 <div class="form-group col-md-12">
+                                     <div class="icon"><i class="fas fa-ticket-alt"></i></div>
+                                    <div class="search-input">
+                                       <label>Choose Coupon</label>
+                                       <select name="coupon_code_select" id="coupon_select" class="form-select nice-select td-change" disabled>
+                                          <option value="" selected="selected" disabled="disabled">Select Coupon</option>
+                                       </select>
+                                    </div>
+                                 </div>
                                  <div class="form-group col-md-12 mb-5">
                                     <div class="icon"><i class="fas fa-ticket-alt"></i></div>
                                      <div class="search-input">
@@ -424,7 +433,8 @@ else
          //  console.log(mc_id);
          //  console.log(act_id);
          //  console.log(coupon_code);
-          
+         
+
           
            $('#coupon-message').text('');
             $('#coupon-error').text('');

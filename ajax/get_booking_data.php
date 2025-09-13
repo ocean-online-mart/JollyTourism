@@ -66,7 +66,7 @@ $coupon_error = '';
 if($coupon_code != '') {
     $total_members = (is_numeric($adult) ? (int)$adult : 0) + (is_numeric($children) ? (int)$children : 0);
     if($total_members <= 5) {
-        $coupon_query = "SELECT * FROM tb_coupons WHERE coupon_code = '$coupon_code' AND status = 1 AND valid_until >= CURDATE()";
+        $coupon_query = "SELECT * FROM tb_coupons WHERE coupon_code = '$coupon_code' AND is_active = 1 AND valid_to >= CURDATE()";
         $coupon_rec = mysqli_query($conn, $coupon_query);
         if($coupon_rec && mysqli_num_rows($coupon_rec) > 0) {
             $coupon_row = mysqli_fetch_object($coupon_rec);
